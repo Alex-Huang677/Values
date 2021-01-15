@@ -210,7 +210,7 @@ obj4 < v_arr2;
 	cout << obj4;  
 	vector<int> v_arr3;  
 	obj4 > v_arr3;  
-	cout << v_arr3[0] << v_arr3[1] << v_arr3[2] << endl; 
+	cout << v_arr3[0] << v_arr3[1] << v_arr3[2] << endl;   
 }  
 
 输出：  
