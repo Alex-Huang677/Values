@@ -32,11 +32,11 @@ int main()
 
 ## 用法示例：
 
-	{    
-		Values&lt;double&gt; obj3;  
-		cout << Values&lt;double&gt;::GetNums() << endl;  
-	}  
-	cout << Values&lt;double$gt;::GetNums() << endl;  
+{    
+	Values&lt;double&gt; obj3;  
+	cout << Values&lt;double&gt;::GetNums() << endl;  
+}  
+cout << Values&lt;double$gt;::GetNums() << endl;  
 
 输出：  
 
