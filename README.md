@@ -7,25 +7,25 @@ Values类是一个C++模板类，用于处理一组数据，可获得一组数�
 构造函数原形如下
 	Values();   用于初始化一个对象
 	Values(T* arr,int size_);   用于定义一个对象
-	Values(const std::vector<T>& arr);   用于定义一个对象
+	Values(const std::vector&lt;T&gt;& arr);   用于定义一个对象
 
 ## 用法示例：
 
 #include "Values.h"
 #include &lt;iostream&gt;
-#include <vector>
+#include &lt;vector&gt;
 using namespace std;
 
 int main()
 
 {
 
-​	Values<int> obj1;
+​	Values&lt;int&gt; obj1;
 ​	float arr1[3] = { 1.0f,2.0f,3.0f };
-​	Values<float> obj2(arr1,3);
+​	Values&lt;float&gt; obj2(arr1,3);
 ​	double arr2[3] = { 3,4,5 };
-​	vector<double> v_arr1(arr2, arr2 + 3);
-​	Values<double> v_obj1(v_arr1);
+​	vector&lt;double&gt; v_arr1(arr2, arr2 + 3);
+​	Values&lt;double&gt; v_obj1(v_arr1);
 
 # 析构函数
 
@@ -35,10 +35,10 @@ int main()
 ## 用法示例：
 
 {
-		Values<double> obj3;
-		cout << Values<double>::GetNums() << endl;
+		Values&lt;double&gt; obj3;
+		cout << Values&lt;double&gt;::GetNums() << endl;
 	}
-	cout << Values<double>::GetNums() << endl;
+	cout << Values&lt;double$gt;::GetNums() << endl;
 
 输出：
 
@@ -51,22 +51,22 @@ int main()
 	Values(const Values& obj);
 	赋值运算符原型如下
 	Values& operator=(const Values& obj);
-	Values& operator=(const std::vector<T>& arr);
+	Values& operator=(const std::vector&lt;T&gt;& arr);
 
 ## 用法示例：
 
 int arr3[3]= { 1,2,3 };
-	Values<int> obj4(arr3,3);
+	Values&lt;int&gt; obj4(arr3,3);
 	obj1 = obj4;
-	Values<double> v_obj2 = v_arr1;
+	Values&lt;double&gt; v_obj2 = v_arr1;
 
 # <<运算符重载
 
 <<运算符重载原型如下
-	template <typename T>
-	std::ostream& operator<<(std::ostream& os, const Values<T>& obj);
+	template &lt;typename T&gt;
+	std::ostream& operator<<(std::ostream& os, const Values&lt;T&gt;& obj);
 	//在类中重新声明为友元
-	friend std::ostream& operator<<<>(std::ostream & os, const Values<T> & obj);
+	friend std::ostream& operator<<&lt;&gt;(std::ostream & os, const Values&lt;T&gt; & obj);
 	<<可以把对象的成员按这种格式输出
 	数据值为：x x x
 	和为：
@@ -149,7 +149,7 @@ int size4 = obj4.GetSize();
 
 ## 用法示例：
 
-cout << Values<double>::GetNums() << endl;
+cout << Values&lt;double&gt;::GetNums() << endl;
 
 输出：
 
@@ -159,12 +159,12 @@ cout << Values<double>::GetNums() << endl;
 
 函数SetValues()用于重新为一个对象的成员赋值
 	void SetValues(T* arr, int size_);
-	void SetValues(const std::vector<T> & arr);
+	void SetValues(const std::vector&lt;T&gt; & arr);
 
 ## 用法示例：
 
 int arr4[3] = { 32,66,78 };
-	vector<int> v_arr2(arr4, arr4 + 3);
+	vector&lt;int&gt; v_arr2(arr4, arr4 + 3);
 	obj4.SetValues(arr4,3);
 	cout << obj4 << endl;
 	obj4.SetValues(v_arr2);
@@ -201,10 +201,10 @@ cout << obj4[2] << endl;
 
 Values类还重载了<和>，要求符号左为此类对象，右为一个向量对象
 	<与=作用相同
-	Values& operator<(const std::vector<T>& arr);
+	Values& operator<(const std::vector&lt;T&gt;& arr);
 
 用于把Values对象储存的值赋给向量对象
-std::vector<T>& operator>(const std::vector<T>& arr);
+std::vector&lt;T&gt;& operator>(const std::vector&lt;T&gt;& arr);
 
 ## 用法示例：
 
